@@ -1,0 +1,2 @@
+name     = "spaceshuttle"
+location = "canadacentral"
