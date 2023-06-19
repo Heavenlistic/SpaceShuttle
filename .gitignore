@@ -1,0 +1,9 @@
+/ACR/.terraform
+/ACR/.terraform.lock.hcl
+/AKS/.terraform
+/AKS/.terraform.lock.hcl
+/Log-analytics/.terraform
+/Log-analytics/.terraform.lock.hcl
+/VNET/.terraform
+/VNET/.terraform.lock.hcl
+terraform.tfstate
