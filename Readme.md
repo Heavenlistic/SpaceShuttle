@@ -25,7 +25,7 @@
 7. git add . > git commit -m "Second push" > git push (to additional changes with updated comments) 
 
 # Docker & Kubernetes Commands
-1. # cd into the Docker directory to see a Dockerfile and app directory, to create the Docker image, run the command:
+1. cd into the Docker directory to see a Dockerfile and app directory, to create the Docker image, run the command:
 docker build -t uberapp .
 
 2. # to confirm the Docker image is on the machine
