@@ -22,4 +22,56 @@
 6.  git remote add origin (git link) 
     git branch -M main 
     git push -u origin main
-7. git add . 
+7. git add . > git commit -m "Second push" > git push (to additional changes with updated comments) 
+
+# Docker & Kubernetes Commands
+1. # cd into the Docker directory to see a Dockerfile and app directory, to create the Docker image, run the command:
+docker build -t uberapp .
+
+2. # to confirm the Docker image is on the machine
+docker image ls
+
+3. # To run the Docker container, run the command: 
+docker run -tid uberapp
+
+4. # To confirm the Docker container is running, run the command: 
+docker container ls
+
+5. # To log in to ACR Repository with Azure CLI 
+az acr login --name spaceshuttlemyacr01
+
+6. # To tag the Docker image
+docker tag uberapp spaceshuttlemyacr01.azurecr.io/uberapp:v1
+
+7. # To push the Docker image to ACR
+docker push spaceshuttlemyacr01.azurecr.io/uberapp:v1
+
+8. # To connect to AKS: 
+az aks get-credentials --resource-group spaceshuttle-rg --name spaceshuttleaks --admin
+
+9. # To check the current context and user
+kubectl config current-context
+
+10. # To confirm connection: 
+kubectl get nodes
+
+11. # To create The Kubernetes Manifest
+change the image URL on line 31 in deployment.yml (Kubernetes Manifest folder) to spaceshuttlemyacr01.azurecr.io/uberapp:v1
+
+12. # To deploy The Uber App
+cd kubernetes_manifest directory > kubectl create -f deployment.yml
+
+13. # To confirm deployment was successful: 
+kubectl get deployments
+
+14. # To access uber-ui via Application Gateway 
+kubectl get ingress
+
+15. # To check if the controller pods is running or not
+kubectl get pods
+
+16. # To check the endpoints in the service> Copy & paste the LoadBalancer Ingress to view the app
+kubectl describe service uber-ui  
+
+17. # To set up authentication from GitHub to Azure
+az ad sp create-for-rbac --name spaceshuttle
