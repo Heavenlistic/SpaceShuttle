@@ -28,17 +28,13 @@
 1. cd into the Docker directory to see a Dockerfile and app directory, to create the Docker image, run the command:
 docker build -t uberapp .
 
-2. # to confirm the Docker image is on the machine
-docker image ls
+2. To confirm the Docker image is on the machine: docker image ls
 
-3. # To run the Docker container, run the command: 
-docker run -tid uberapp
+3. To run the Docker container, run the command: docker run -tid uberapp
 
-4. # To confirm the Docker container is running, run the command: 
-docker container ls
+4. To confirm the Docker container is running, run the command: docker container ls
 
-5. # To log in to ACR Repository with Azure CLI 
-az acr login --name spaceshuttlemyacr01
+5. To log in to ACR Repository with Azure CLI: az acr login --name spaceshuttlemyacr01
 
 6. # To tag the Docker image
 docker tag uberapp spaceshuttlemyacr01.azurecr.io/uberapp:v1
